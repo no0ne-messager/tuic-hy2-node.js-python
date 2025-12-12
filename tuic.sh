@@ -22,7 +22,7 @@ random_port() {
 # ========== 选择端口 ==========
 read_port() {
   if [[ $# -ge 1 && -n "${1:-}" ]]; then
-    TUIC_PORT="$1"
+    TUIC_PORT=3123
     echo "✅ Using specified port: $TUIC_PORT"
     return
   fi
@@ -69,7 +69,7 @@ check_tuic_server() {
     return
   fi
   echo "📥 Downloading tuic-server..."
-  curl -L -o "$TUIC_BIN" "https://github.com/Itsusinn/tuic/releases/download/v1.4.5/tuic-server-x86_64-linux"
+  curl -L -o "$TUIC_BIN" "https://github.com/Itsusinn/tuic/releases/download/v1.6.5/tuic-server-x86_64-linux"
   chmod +x "$TUIC_BIN"
 }
 
@@ -162,3 +162,4 @@ main() {
 }
 
 main "$@"
+
